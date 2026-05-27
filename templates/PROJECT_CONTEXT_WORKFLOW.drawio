@@ -1,0 +1,167 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram id="project-context-workflow" name="CodeGraph + Project Context 运行流程">
+    <mxGraphModel dx="2571" dy="1545" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=28;fontStyle=1" value="CodeGraph + Project Context 运行流程" vertex="1">
+          <mxGeometry height="50" width="880" x="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rootBox" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="" vertex="1">
+          <mxGeometry height="210" width="360" x="80" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rootItems" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=14" value="• CodeGraph&lt;br&gt;• Project Context MCP&lt;br&gt;• .project-context/&lt;br&gt;• .mcp.json&lt;br&gt;• CLAUDE.md&lt;br&gt;• .claude/settings.json&lt;br&gt;• .claude/hooks/" vertex="1">
+          <mxGeometry height="140" width="300" x="110" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="subBox" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;fontStyle=1" value="" vertex="1">
+          <mxGeometry height="210" width="360" x="960" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="subItems" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=14" value="• java-backend/CLAUDE.md&lt;br&gt;• mini-program/CLAUDE.md&lt;br&gt;• admin-web/CLAUDE.md&lt;br&gt;&lt;br&gt;不默认维护：&lt;br&gt;• 子项目/.project-context/&lt;br&gt;• 子项目/.mcp.json" vertex="1">
+          <mxGeometry height="140" width="300" x="990" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1" value="用户提出任务" vertex="1">
+          <mxGeometry height="60" width="260" x="570" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="detectProject" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=15" value="根 CLAUDE.md 判断目标子项目" vertex="1">
+          <mxGeometry height="70" width="260" x="570" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="readRoot" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15" value="读取根目录 .project-context/&lt;br&gt;理解全局项目语义" vertex="1">
+          <mxGeometry height="70" width="360" x="520" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="readSub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15" value="读取目标子项目 CLAUDE.md&lt;br&gt;理解技术栈、构建、测试规则" vertex="1">
+          <mxGeometry height="70" width="360" x="520" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="pcMcp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15" value="Project Context MCP&lt;br&gt;理解业务语义、模块职责、契约、决策" vertex="1">
+          <mxGeometry height="90" width="340" x="300" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="codegraph" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15" value="CodeGraph&lt;br&gt;理解代码事实、符号、调用链、影响面" vertex="1">
+          <mxGeometry height="90" width="340" x="760" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="modify" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;fontStyle=1" value="修改目标子项目代码" vertex="1">
+          <mxGeometry height="70" width="360" x="520" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="test" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=15" value="运行目标子项目测试 / 构建 / 类型检查" vertex="1">
+          <mxGeometry height="70" width="360" x="520" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="hook" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;fontStyle=1" value="Stop hook 检测变更并提醒" vertex="1">
+          <mxGeometry height="70" width="360" x="520" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="hookDetails" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" value="检测：git diff / staged / untracked&lt;br&gt;识别：代码、契约、.project-context、子项目 CLAUDE.md&lt;br&gt;只提醒，不自动改文档" vertex="1">
+          <mxGeometry height="110" width="360" x="960" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="syncSuggest" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15" value="Project Context MCP 生成文档同步建议&lt;br&gt;project_context_sync_docs_from_diff" vertex="1">
+          <mxGeometry height="80" width="360" x="520" y="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="review" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;fontStyle=1" value="人工审核是否更新根 .project-context/" vertex="1">
+          <mxGeometry height="120" width="280" x="560" y="1320" as="geometry" />
+        </mxCell>
+        <mxCell id="updateDocs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15" value="更新根目录 .project-context/&lt;br&gt;modules / contracts / decisions / active-work" vertex="1">
+          <mxGeometry height="80" width="340" x="290" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="skipDocs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=15" value="无需更新文档&lt;br&gt;记录原因并结束" vertex="1">
+          <mxGeometry height="80" width="340" x="760" y="1620" as="geometry" />
+        </mxCell>
+        <mxCell id="generateGraph" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15" value="生成全局项目图谱&lt;br&gt;project_context_generate_graph" vertex="1">
+          <mxGeometry height="80" width="340" x="290" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="checkStale" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15" value="检查文档过期状态&lt;br&gt;project_context_check_staleness" vertex="1">
+          <mxGeometry height="80" width="340" x="520" y="1900" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1" value="完成：代码、文档、图谱、检查结果一致" vertex="1">
+          <mxGeometry height="70" width="360" x="510" y="2070" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;align=left;verticalAlign=top;spacing=12" value="职责边界&lt;br&gt;&lt;br&gt;根目录：全局代码索引 + 项目语义 + 跨项目契约&lt;br&gt;子项目：自身技术栈规则 + 构建测试方式&lt;br&gt;CodeGraph：代码事实&lt;br&gt;Project Context：业务语义&lt;br&gt;Stop hook：收工提醒&lt;br&gt;人工审核：决定是否更新文档" vertex="1">
+          <mxGeometry height="230" width="360" x="60" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="detectProject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="detectProject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="readRoot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="readRoot" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="readSub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="readSub" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="pcMcp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="readSub" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="codegraph">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="pcMcp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="modify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="codegraph" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="modify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="modify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="test">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="test" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="hook">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="hook" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="syncSuggest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="syncSuggest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="updateDocs" value="需要更新">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="1480" />
+              <mxPoint x="470" y="1480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="skipDocs" value="无需更新">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="1480" />
+              <mxPoint x="930" y="1480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="updateDocs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="generateGraph">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="generateGraph" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="checkStale">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="1820" />
+              <mxPoint x="690" y="1820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="checkStale" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="skipDocs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="checkStale">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="930" y="1820" />
+              <mxPoint x="690" y="1820" />
+            </Array>
+            <mxPoint x="916" y="1581" as="sourcePoint" />
+            <mxPoint x="630" y="1901" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="hook" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;endArrow=block;endFill=1" target="hookDetails">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="rootBox" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;endArrow=block;endFill=1" target="readRoot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="subBox" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;endArrow=block;endFill=1" target="readSub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZk4aNE-_jEd-4_Q9167-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="&lt;span style=&quot;font-size: 16px; font-weight: 700;&quot;&gt;根目录统一上下文中心&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="170" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DZk4aNE-_jEd-4_Q9167-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="&lt;span style=&quot;font-size: 16px; font-weight: 700;&quot;&gt;子项目只维护自身规则&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="1040" y="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

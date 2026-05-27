@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "contracts": [
+    {
+      "id": "api",
+      "name": "API 契约",
+      "doc": "contracts/api.md",
+      "authority": [],
+      "related_modules": []
+    },
+    {
+      "id": "database",
+      "name": "数据库契约",
+      "doc": "contracts/database.md",
+      "authority": [],
+      "related_modules": []
+    },
+    {
+      "id": "events",
+      "name": "事件契约",
+      "doc": "contracts/events.md",
+      "authority": [],
+      "related_modules": []
+    }
+  ]
+}

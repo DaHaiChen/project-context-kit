@@ -1,0 +1,13 @@
+ {
+    "mcpServers": {
+      "project-context": {
+        "command": "node",
+        "args": [
+          "./project-context-mcp/dist/index.js"
+        ],
+        "env": {
+          "PROJECT_CONTEXT_ROOT": "."
+        }
+      }
+    }
+  }

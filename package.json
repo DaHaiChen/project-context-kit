@@ -1,0 +1,24 @@
+{
+  "name": "project-context-kit",
+  "version": "0.1.0",
+  "description": "Initialize CodeGraph + Project Context workflow for Claude Code.",
+  "type": "module",
+  "bin": {
+    "project-context-kit": "./bin/project-context-kit.js"
+  },
+  "files": [
+    "bin",
+    "templates",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "node --check bin/project-context-kit.js"
+  },
+  "keywords": [
+    "claude-code",
+    "mcp",
+    "codegraph",
+    "project-context"
+  ],
+  "license": "MIT"
+}
