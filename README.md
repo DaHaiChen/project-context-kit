@@ -100,7 +100,6 @@ CLI 执行完成后，会提示继续完成本地依赖和索引初始化：
 ```bash
 cd project-context-mcp
 npm install
-npm run build
 cd ..
 codegraph init -i
 ```
@@ -178,6 +177,7 @@ node bin/sync-templates.js --from ../基础架构
 - 按 `基础架构/` 的文件夹结构写入 `templates/`
 - 排除 `settings.local.json`、`node_modules`、`pnpm-lock.yaml` 等本地/依赖产物
 - 将 `modules.json` 重置为空，并移除试运行用的 `modules/testing/`
+- `project-context-mcp/` 只同步 `dist/` 与运行时 `package.json`，不包含 `src/` 与 `tsconfig.json`
 
 修改模板后，重新运行 `project-context-kit init --force` 可以覆盖目标项目中的对应文件。
 
@@ -185,7 +185,7 @@ node bin/sync-templates.js --from ../基础架构
 
 - 默认不会覆盖已存在文件；如需覆盖请显式传入 `--force`。
 - `--dry-run` 可用于预览本次初始化会写入哪些文件。
-- `project-context-mcp/` 需要单独执行 `npm install` 和 `npm run build`。
+- `project-context-mcp/` 模板只包含编译后的 `dist/`，初始化后执行 `npm install` 安装运行时依赖即可。
 - CodeGraph 需要在目标项目根目录执行 `codegraph init -i`。
 - Stop hook 只做提醒，不会自动修改 `.project-context/`。
 - `.project-context/` 用于记录长期有效的项目语义，不应写入密钥、token、cookie 或生产敏感数据。

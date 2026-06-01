@@ -13,12 +13,15 @@
 - `project_context_check_staleness`：检查文档、metadata、契约和生成物是否明显过期。
 - `project_context_sync_docs_from_diff`：根据 diff 或文件列表生成文档同步建议。
 
-## 安装与构建
+## 安装
+
+模板分发只包含编译后的 `dist/`。初始化后安装运行时依赖即可：
 
 ```bash
 npm install
-npm run build
 ```
+
+若在参考仓库中修改 MCP 源码，需在 `project-context-mcp/` 内执行 `npm run build`，再通过 `project-context-kit` 的 `sync-templates` 同步产物。
 
 ## 本地运行
 

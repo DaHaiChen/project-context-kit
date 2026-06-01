@@ -4,6 +4,7 @@
  * 从参考目录（默认 ../基础架构）同步 templates/，目录结构与参考仓库一致。
  */
 
+import { execSync } from "node:child_process";
 import {
   chmodSync,
   copyFileSync,
@@ -85,7 +86,6 @@ function syncTemplates(referenceRoot) {
     ".claude/skills",
     ".mcp.json",
     ".project-context",
-    "project-context-mcp",
     "CLAUDE.md",
     "AGENTS.md",
     "docs"
@@ -102,9 +102,62 @@ function syncTemplates(referenceRoot) {
     copyRecursive(from, to, referenceRoot);
   }
 
+  syncProjectContextMcp(referenceRoot);
   syncArchitectureDocs(referenceRoot);
   sanitizeProjectContextTemplate();
   makeHookExecutable();
+}
+
+function syncProjectContextMcp(referenceRoot) {
+  const sourceMcpRoot = path.join(referenceRoot, "project-context-mcp");
+  const templateMcpRoot = path.join(templateRoot, "project-context-mcp");
+
+  if (!existsSync(sourceMcpRoot)) {
+    console.log("[skip] missing in reference: project-context-mcp");
+    return;
+  }
+
+  const sourceDist = path.join(sourceMcpRoot, "dist");
+  const sourcePackageJson = path.join(sourceMcpRoot, "package.json");
+  const sourceReadme = path.join(sourceMcpRoot, "README.md");
+
+  console.log("[build] project-context-mcp");
+  execSync("npm run build", { cwd: sourceMcpRoot, stdio: "inherit" });
+
+  if (!existsSync(sourceDist)) {
+    throw new Error(`Build did not produce dist/: ${sourceDist}`);
+  }
+
+  rmSync(templateMcpRoot, { recursive: true, force: true });
+  mkdirSync(templateMcpRoot, { recursive: true });
+
+  copyRecursive(sourceDist, path.join(templateMcpRoot, "dist"), sourceMcpRoot);
+  console.log("[copy] project-context-mcp/dist");
+
+  if (existsSync(sourceReadme)) {
+    copyFileSync(sourceReadme, path.join(templateMcpRoot, "README.md"));
+    console.log("[copy] project-context-mcp/README.md");
+  }
+
+  if (!existsSync(sourcePackageJson)) {
+    throw new Error(`Missing package.json: ${sourcePackageJson}`);
+  }
+
+  const sourcePackage = JSON.parse(readFileSync(sourcePackageJson, "utf8"));
+  const runtimePackage = {
+    name: sourcePackage.name ?? "project-context-mcp-server",
+    version: sourcePackage.version ?? "0.1.0",
+    private: true,
+    description: sourcePackage.description ?? "Project Context MCP server for .project-context semantic documentation.",
+    type: sourcePackage.type ?? "module",
+    scripts: {
+      start: "node dist/index.js"
+    },
+    dependencies: sourcePackage.dependencies ?? {}
+  };
+
+  writeFileSync(path.join(templateMcpRoot, "package.json"), `${JSON.stringify(runtimePackage, null, 2)}\n`, "utf8");
+  console.log("[write] project-context-mcp/package.json (runtime only)");
 }
 
 function syncArchitectureDocs(referenceRoot) {
@@ -166,9 +219,7 @@ function shouldSkip(relativePath) {
   if (normalized === "协作上下文中枢架构说明.md") return true;
   if (normalized === "PROJECT_CONTEXT_WORKFLOW.md") return true;
   if (normalized === "PROJECT_CONTEXT_WORKFLOW.drawio") return true;
-  if (normalized.startsWith("project-context-mcp/node_modules/")) return true;
-  if (normalized.startsWith("project-context-mcp/dist/")) return true;
-  if (normalized === "project-context-mcp/pnpm-lock.yaml") return true;
+  if (normalized.startsWith("project-context-mcp/")) return true;
   if (normalized.startsWith(".project-context/modules/testing/")) return true;
 
   return false;

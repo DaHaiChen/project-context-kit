@@ -103,7 +103,6 @@ async function init(options) {
   console.log("\nNext steps:");
   console.log("  cd project-context-mcp");
   console.log("  npm install");
-  console.log("  npm run build");
   console.log("  cd ..");
   console.log("  codegraph init -i");
   console.log("  restart Claude Code");
