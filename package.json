@@ -1,6 +1,6 @@
 {
   "name": "project-context-kit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Initialize CodeGraph + Project Context workflow for Claude Code.",
   "type": "module",
   "bin": {
@@ -12,7 +12,8 @@
     "README.md"
   ],
   "scripts": {
-    "check": "node --check bin/project-context-kit.js"
+    "check": "node --check bin/project-context-kit.js && node --check bin/sync-templates.js",
+    "sync-templates": "node bin/sync-templates.js"
   },
   "keywords": [
     "claude-code",

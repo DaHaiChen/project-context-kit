@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>项目上下文图谱</title>
+    <link rel="stylesheet" href="./viewer.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Project Context</p>
+        <h1 id="project-title">项目上下文图谱</h1>
+      </div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="搜索模块、契约、文档内容" autocomplete="off" />
+        <select id="type-filter" aria-label="节点类型过滤">
+          <option value="all">全部类型</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel tree-panel">
+        <div class="panel-header">
+          <h2>知识树</h2>
+          <span id="node-count" class="count">0</span>
+        </div>
+        <nav id="tree" class="tree" aria-label="Project Context 知识树"></nav>
+      </aside>
+
+      <section class="panel graph-panel">
+        <div class="panel-header">
+          <h2>关系图</h2>
+          <span id="edge-count" class="count">0</span>
+        </div>
+        <svg id="graph" role="img" aria-label="Project Context 关系图"></svg>
+      </section>
+
+      <aside class="panel detail-panel">
+        <div class="panel-header">
+          <h2>详情</h2>
+          <span id="selected-type" class="count">未选择</span>
+        </div>
+        <article id="detail" class="detail empty">选择左侧节点或中间图谱节点查看详情。</article>
+      </aside>
+    </main>
+
+    <script src="./context-data.js"></script>
+    <script src="./viewer.js" type="module"></script>
+  </body>
+</html>

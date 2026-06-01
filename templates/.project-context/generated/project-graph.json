@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "generated_at": "2026-05-28T00:53:09.851Z",
+  "project": {
+    "name": "团队共享知识图谱"
+  },
+  "modules": [
+    {
+      "id": "testing.context-flow-trial",
+      "name": "上下文流程试运行",
+      "doc": "modules/testing/context-flow-trial.md",
+      "files": [],
+      "contracts": [],
+      "depends_on": [],
+      "owners": [],
+      "tags": [],
+      "business_rules": []
+    }
+  ],
+  "contracts": [
+    {
+      "id": "api",
+      "name": "API 契约",
+      "doc": "contracts/api.md",
+      "authority": [],
+      "related_modules": []
+    },
+    {
+      "id": "database",
+      "name": "数据库契约",
+      "doc": "contracts/database.md",
+      "authority": [],
+      "related_modules": []
+    },
+    {
+      "id": "events",
+      "name": "事件契约",
+      "doc": "contracts/events.md",
+      "authority": [],
+      "related_modules": []
+    }
+  ],
+  "edges": []
+}

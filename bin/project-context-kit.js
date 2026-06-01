@@ -111,12 +111,15 @@ async function init(options) {
 
 function buildTargets(cwd, only) {
   const allTargets = [
-    { group: "context", from: "project-context", to: ".project-context" },
+    { group: "context", from: ".project-context", to: ".project-context" },
     { group: "mcp", from: "project-context-mcp", to: "project-context-mcp" },
-    { group: "mcp", from: "mcp.json", to: ".mcp.json" },
-    { group: "hooks", from: "claude-settings.json", to: ".claude/settings.json" },
-    { group: "hooks", from: "hooks/project-context-stop-check.sh", to: ".claude/hooks/project-context-stop-check.sh" },
+    { group: "mcp", from: ".mcp.json", to: ".mcp.json" },
+    { group: "hooks", from: ".claude/settings.json", to: ".claude/settings.json" },
+    { group: "hooks", from: ".claude/hooks/project-context-stop-check.sh", to: ".claude/hooks/project-context-stop-check.sh" },
+    { group: "hooks", from: ".claude/skills", to: ".claude/skills" },
     { group: "docs", from: "CLAUDE.md", to: "CLAUDE.md" },
+    { group: "docs", from: "AGENTS.md", to: "AGENTS.md" },
+    { group: "docs", from: "docs", to: "docs" },
     { group: "docs", from: "PROJECT_CONTEXT_WORKFLOW.md", to: "PROJECT_CONTEXT_WORKFLOW.md" },
     { group: "docs", from: "PROJECT_CONTEXT_WORKFLOW.drawio", to: "PROJECT_CONTEXT_WORKFLOW.drawio" }
   ];
@@ -185,7 +188,7 @@ Options:
   --name <name>       Set project name in generated graph
   --force             Overwrite existing files
   --dry-run           Show files without writing
-  --only <part>       all|context|mcp|hooks|docs (default: all)
+  --only <part>       all|context|mcp|hooks|docs (default: all; docs 含 AGENTS.md 与 docs/)
   -h, --help          Show help
 `);
 }

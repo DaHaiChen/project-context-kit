@@ -61,7 +61,7 @@ project-context-kit init --only hooks --force
 
 ## 生成内容
 
-执行 `project-context-kit init` 后，会向当前目录写入以下内容：
+执行 `project-context-kit init` 后，会向当前目录写入以下内容（目录结构与参考实现 `基础架构/` 一致）：
 
 ```text
 .project-context/                         # 项目语义文档层
@@ -69,7 +69,10 @@ project-context-mcp/                      # 本地 Project Context MCP server
 .mcp.json                                 # Claude Code MCP 配置
 .claude/settings.json                     # Stop hook 配置
 .claude/hooks/project-context-stop-check.sh
-CLAUDE.md                                 # agent 协作规则
+.claude/skills/context-sync/              # 文档同步 skill
+CLAUDE.md                                 # Claude Code 协作规则
+AGENTS.md                                 # 通用 agent 协作规则
+docs/                                     # 完整交付文档层
 PROJECT_CONTEXT_WORKFLOW.md               # 工作流说明
 PROJECT_CONTEXT_WORKFLOW.drawio           # 工作流图
 ```
@@ -119,7 +122,7 @@ codegraph init -i
 
 ## 推荐工作流
 
-1. 根目录统一维护 CodeGraph、Project Context MCP、`.project-context/` 和 `.mcp.json`。
+1. 根目录统一维护 CodeGraph、Project Context MCP、`.project-context/`、`docs/` 和 `.mcp.json`。
 2. 子项目只维护自己的 `CLAUDE.md`，用于记录技术栈、启动方式、测试命令和本地注意事项。
 3. Claude 接到任务后，先读取根目录 `.project-context/`，再读取目标子项目 `CLAUDE.md`。
 4. 理解业务语义时使用 Project Context MCP，定位代码事实时使用 CodeGraph。
@@ -142,19 +145,39 @@ npm run check
 
 ## 模板目录
 
-所有初始化文件都来自 `templates/`：
+所有初始化文件都来自 `templates/`，**目录布局与 `基础架构/` 保持一致**：
 
 ```text
 templates/
+  .claude/
+    settings.json
+    hooks/
+    skills/
+  .mcp.json
+  .project-context/
+  project-context-mcp/
   CLAUDE.md
+  AGENTS.md
+  docs/
   PROJECT_CONTEXT_WORKFLOW.md
   PROJECT_CONTEXT_WORKFLOW.drawio
-  claude-settings.json
-  mcp.json
-  hooks/
-  project-context/
-  project-context-mcp/
 ```
+
+### 从基础架构同步模板
+
+在 `project-context-kit` 包目录执行：
+
+```bash
+npm run sync-templates
+# 或指定参考目录
+node bin/sync-templates.js --from ../基础架构
+```
+
+同步时会：
+
+- 按 `基础架构/` 的文件夹结构写入 `templates/`
+- 排除 `settings.local.json`、`node_modules`、`pnpm-lock.yaml` 等本地/依赖产物
+- 将 `modules.json` 重置为空，并移除试运行用的 `modules/testing/`
 
 修改模板后，重新运行 `project-context-kit init --force` 可以覆盖目标项目中的对应文件。
 

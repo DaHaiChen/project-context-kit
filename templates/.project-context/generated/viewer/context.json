@@ -1,0 +1,509 @@
+{
+  "version": 1,
+  "generated_at": "2026-05-27T13:31:34.938Z",
+  "project_root": "/Users/chenshaocong/work/团队共享知识图谱",
+  "context_root": "/Users/chenshaocong/work/团队共享知识图谱/.project-context",
+  "graph": {
+    "version": 1,
+    "generated_at": null,
+    "project": {
+      "name": "团队共享知识图谱"
+    },
+    "modules": [],
+    "edges": []
+  },
+  "metadata": {
+    "modules": [],
+    "contracts": [
+      {
+        "id": "api",
+        "name": "API 契约",
+        "doc": "contracts/api.md",
+        "authority": [],
+        "related_modules": []
+      },
+      {
+        "id": "database",
+        "name": "数据库契约",
+        "doc": "contracts/database.md",
+        "authority": [],
+        "related_modules": []
+      },
+      {
+        "id": "events",
+        "name": "事件契约",
+        "doc": "contracts/events.md",
+        "authority": [],
+        "related_modules": []
+      }
+    ],
+    "external_sources": {
+      "version": 1,
+      "sources": []
+    },
+    "ownership": {
+      "version": 1,
+      "owners": []
+    }
+  },
+  "documents": [
+    {
+      "path": "INDEX.md",
+      "title": "项目共享上下文索引",
+      "type": "doc",
+      "summary": "项目共享上下文索引 这是所有 agent 的项目上下文入口。开始任何开发任务前，先从这里判断需要读取哪些上下文文件。 项目目标 待补充：用 3～5 句话说明项目要解决的问题、核心用户、主要业务目标。 当前状态 待补充：当前项目阶段、主要开发方向、近期重点。 阅读顺序 通用任务： 1. architecture.md 2. glossary.md 3. act...",
+      "content": "# 项目共享上下文索引\n\n这是所有 agent 的项目上下文入口。开始任何开发任务前，先从这里判断需要读取哪些上下文文件。\n\n## 项目目标\n\n待补充：用 3～5 句话说明项目要解决的问题、核心用户、主要业务目标。\n\n## 当前状态\n\n待补充：当前项目阶段、主要开发方向、近期重点。\n\n## 阅读顺序\n\n通用任务：\n\n1. `architecture.md`\n2. `glossary.md`\n3. `active-work/current.md`\n4. `active-work/blockers.md`\n\n涉及模块开发：\n\n1. `modules/` 下对应模块文件\n2. `contracts/api.md`\n3. `contracts/database.md`\n4. `contracts/events.md`\n\n涉及跨模块协作：\n\n1. `architecture.md`\n2. 所有关联 `modules/*.md`\n3. 相关 `contracts/*.md`\n4. `decisions/` 下相关决策\n\n## 模块地图\n\n| 模块 | 上下文文件 | 负责人/主要维护者 | 说明 |\n|---|---|---|---|\n| 待补充 | `modules/_template.md` | 待补充 | 待补充 |\n\n## 关键契约\n\n| 类型 | 文件 | 说明 |\n|---|---|---|\n| API | `contracts/api.md` | HTTP/RPC/内部接口约定 |\n| 事件 | `contracts/events.md` | MQ、领域事件、异步通知约定 |\n| 数据库 | `contracts/database.md` | 表结构、共享字段、数据语义 |\n\n## 当前协作入口\n\n- 当前重点：`active-work/current.md`\n- 阻塞与风险：`active-work/blockers.md`\n- agent 交接模板：`agent-notes/template.md`\n\n## 设计说明\n\n- Project Context MCP 旁路扩展设计：`designs/project-context-mcp-design.md`\n- Project Context 目录维护说明：`designs/project-context-directory-guide.md`\n\n## 维护规则\n\n- 修改模块边界时，更新对应 `modules/*.md`。\n- 修改跨模块接口时，更新 `contracts/*.md`。\n- 做出长期有效的技术决策时，在 `decisions/` 新增 ADR。\n- 发现短期阻塞或协作风险时，更新 `active-work/blockers.md`。\n"
+    },
+    {
+      "path": "README.md",
+      "title": "共享上下文记忆树",
+      "type": "doc",
+      "summary": "共享上下文记忆树 本目录保存项目级共享上下文，供多人、多 agent 协作时使用。 快速入口 总索引： INDEX.md 架构上下文： architecture.md 术语表： glossary.md 模块上下文： modules/ 跨模块契约： contracts/ 架构决策： decisions/ 当前协作： active work/ agent 交接：...",
+      "content": "# 共享上下文记忆树\n\n本目录保存项目级共享上下文，供多人、多 agent 协作时使用。\n\n## 快速入口\n\n- 总索引：`INDEX.md`\n- 架构上下文：`architecture.md`\n- 术语表：`glossary.md`\n- 模块上下文：`modules/`\n- 跨模块契约：`contracts/`\n- 架构决策：`decisions/`\n- 当前协作：`active-work/`\n- agent 交接：`agent-notes/`\n\n## 使用方式\n\n开工前先阅读 `INDEX.md` 和任务相关文件。收工前如果产生会影响其他 agent 的信息，更新对应上下文文件。\n"
+    },
+    {
+      "path": "active-work/blockers.md",
+      "title": "阻塞点与风险",
+      "type": "active-work",
+      "summary": "阻塞点与风险 记录跨模块阻塞、协作风险、未决问题和需要人工决策的事项。 当前阻塞 阻塞点 影响范围 需要谁处理 状态 备注 待补充 待补充 待补充 待补充 待补充 风险列表 风险 影响 缓解方式 状态 待补充 待补充 待补充 待补充 未决问题 待补充：需要用户或团队确认的问题。",
+      "content": "# 阻塞点与风险\n\n记录跨模块阻塞、协作风险、未决问题和需要人工决策的事项。\n\n## 当前阻塞\n\n| 阻塞点 | 影响范围 | 需要谁处理 | 状态 | 备注 |\n|---|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 风险列表\n\n| 风险 | 影响 | 缓解方式 | 状态 |\n|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 未决问题\n\n- 待补充：需要用户或团队确认的问题。\n"
+    },
+    {
+      "path": "active-work/current.md",
+      "title": "当前协作重点",
+      "type": "active-work",
+      "summary": "当前协作重点 记录当前阶段正在推进、会影响多个 agent 或多个模块的工作。不要写个人流水账。 当前重点 事项 涉及模块 负责人/agent 状态 下一步 待补充 待补充 待补充 待补充 待补充 近期变更提醒 待补充：记录近期会影响其他 agent 判断的重要变化。 交接注意事项 待补充：记录下一个 agent 开工前必须知道的上下文。",
+      "content": "# 当前协作重点\n\n记录当前阶段正在推进、会影响多个 agent 或多个模块的工作。不要写个人流水账。\n\n## 当前重点\n\n| 事项 | 涉及模块 | 负责人/agent | 状态 | 下一步 |\n|---|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 近期变更提醒\n\n- 待补充：记录近期会影响其他 agent 判断的重要变化。\n\n## 交接注意事项\n\n- 待补充：记录下一个 agent 开工前必须知道的上下文。\n"
+    },
+    {
+      "path": "agent-notes/template.md",
+      "title": "Agent 交接记录模板",
+      "type": "agent-note",
+      "summary": "Agent 交接记录模板 用于记录必要的跨 agent 交接信息。只记录后续 agent 必须知道的内容，不写流水账。 基本信息 日期：YYYY MM DD agent/人员：待补充 任务：待补充 涉及模块：待补充 本次重要结论 待补充：记录会影响后续判断的结论。 已完成 待补充：只列关键结果。 未完成 / 待继续 待补充：说明下一步应该从哪里开始。 影响到...",
+      "content": "# Agent 交接记录模板\n\n用于记录必要的跨 agent 交接信息。只记录后续 agent 必须知道的内容，不写流水账。\n\n## 基本信息\n\n- 日期：YYYY-MM-DD\n- agent/人员：待补充\n- 任务：待补充\n- 涉及模块：待补充\n\n## 本次重要结论\n\n- 待补充：记录会影响后续判断的结论。\n\n## 已完成\n\n- 待补充：只列关键结果。\n\n## 未完成 / 待继续\n\n- 待补充：说明下一步应该从哪里开始。\n\n## 影响到的上下文文件\n\n- 待补充：例如 `modules/xxx.md`、`contracts/api.md`。\n\n## 风险和注意事项\n\n- 待补充：其他 agent 容易误判或重复踩坑的点。\n"
+    },
+    {
+      "path": "architecture.md",
+      "title": "项目架构上下文",
+      "type": "doc",
+      "summary": "项目架构上下文 架构概览 待补充：描述系统整体组成、主要服务、前端/后端/数据层/外部依赖。 核心链路 链路 1：待补充 入口：待补充 主要模块：待补充 关键数据：待补充 外部依赖：待补充 风险点：待补充 模块边界 模块 职责 不负责 依赖 待补充 待补充 待补充 待补充 关键技术约定 待补充：语言、框架、构建工具、运行环境。 待补充：认证、权限、租户、配置...",
+      "content": "# 项目架构上下文\n\n## 架构概览\n\n待补充：描述系统整体组成、主要服务、前端/后端/数据层/外部依赖。\n\n## 核心链路\n\n### 链路 1：待补充\n\n- 入口：待补充\n- 主要模块：待补充\n- 关键数据：待补充\n- 外部依赖：待补充\n- 风险点：待补充\n\n## 模块边界\n\n| 模块 | 职责 | 不负责 | 依赖 |\n|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 关键技术约定\n\n- 待补充：语言、框架、构建工具、运行环境。\n- 待补充：认证、权限、租户、配置、日志、异常处理约定。\n- 待补充：数据一致性、事务、缓存、异步任务约定。\n\n## 需要所有 agent 注意的约束\n\n- 待补充：不能随意破坏的接口或数据语义。\n- 待补充：跨模块变更必须同步更新的文件。\n- 待补充：运行或调试时必须启动的依赖服务。\n"
+    },
+    {
+      "path": "contracts/api.md",
+      "title": "API 契约",
+      "type": "contract-doc",
+      "summary": "API 契约 记录跨模块 HTTP、RPC、内部服务调用等接口契约。任何影响调用方的变更都必须同步更新本文件。 维护规则 新增接口时，说明调用方、提供方、请求参数、响应结构和错误语义。 修改接口时，说明兼容性影响和需要同步修改的模块。 废弃接口时，说明替代方案和迁移状态。 接口列表 接口 提供方 调用方 状态 说明 待补充 待补充 待补充 待补充 待补充 接...",
+      "content": "# API 契约\n\n记录跨模块 HTTP、RPC、内部服务调用等接口契约。任何影响调用方的变更都必须同步更新本文件。\n\n## 维护规则\n\n- 新增接口时，说明调用方、提供方、请求参数、响应结构和错误语义。\n- 修改接口时，说明兼容性影响和需要同步修改的模块。\n- 废弃接口时，说明替代方案和迁移状态。\n\n## 接口列表\n\n| 接口 | 提供方 | 调用方 | 状态 | 说明 |\n|---|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 接口详情模板\n\n### 接口名称\n\n- 提供方：待补充\n- 调用方：待补充\n- 路径/方法：待补充\n- 认证/权限：待补充\n- 请求参数：待补充\n- 响应结构：待补充\n- 错误语义：待补充\n- 兼容性约束：待补充\n- 相关模块：待补充\n"
+    },
+    {
+      "path": "contracts/database.md",
+      "title": "数据库与共享数据契约",
+      "type": "contract-doc",
+      "summary": "数据库与共享数据契约 记录跨模块共享的数据表、字段语义、索引、状态流转和一致性约定。 维护规则 修改共享字段语义时，必须说明影响的模块。 新增状态值、枚举值或数据约束时，必须说明兼容性影响。 涉及迁移、回填、索引、性能风险时，必须记录风险和验证方式。 共享数据列表 数据/表 所属模块 消费模块 关键字段 说明 待补充 待补充 待补充 待补充 待补充 数据详情...",
+      "content": "# 数据库与共享数据契约\n\n记录跨模块共享的数据表、字段语义、索引、状态流转和一致性约定。\n\n## 维护规则\n\n- 修改共享字段语义时，必须说明影响的模块。\n- 新增状态值、枚举值或数据约束时，必须说明兼容性影响。\n- 涉及迁移、回填、索引、性能风险时，必须记录风险和验证方式。\n\n## 共享数据列表\n\n| 数据/表 | 所属模块 | 消费模块 | 关键字段 | 说明 |\n|---|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 数据详情模板\n\n### 数据/表名称\n\n- 所属模块：待补充\n- 消费模块：待补充\n- 关键字段：待补充\n- 状态流转：待补充\n- 一致性要求：待补充\n- 索引/性能注意事项：待补充\n- 迁移/回填注意事项：待补充\n"
+    },
+    {
+      "path": "contracts/events.md",
+      "title": "事件契约",
+      "type": "contract-doc",
+      "summary": "事件契约 记录 MQ、领域事件、异步通知、定时任务触发等跨模块异步契约。 维护规则 新增事件时，说明生产者、消费者、触发时机、payload 和幂等要求。 修改事件 payload 时，说明兼容性影响。 消费者增加副作用时，说明失败重试和补偿策略。 事件列表 事件 生产者 消费者 触发时机 状态 待补充 待补充 待补充 待补充 待补充 事件详情模板 事件名称...",
+      "content": "# 事件契约\n\n记录 MQ、领域事件、异步通知、定时任务触发等跨模块异步契约。\n\n## 维护规则\n\n- 新增事件时，说明生产者、消费者、触发时机、payload 和幂等要求。\n- 修改事件 payload 时，说明兼容性影响。\n- 消费者增加副作用时，说明失败重试和补偿策略。\n\n## 事件列表\n\n| 事件 | 生产者 | 消费者 | 触发时机 | 状态 |\n|---|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 事件详情模板\n\n### 事件名称\n\n- 生产者：待补充\n- 消费者：待补充\n- 触发时机：待补充\n- Topic/Channel：待补充\n- Payload：待补充\n- 幂等键：待补充\n- 重试/补偿：待补充\n- 兼容性约束：待补充\n"
+    },
+    {
+      "path": "decisions/0000-template.md",
+      "title": "ADR-0000：决策标题",
+      "type": "decision",
+      "summary": "ADR 0000：决策标题 状态：草案 / 已采纳 / 已废弃 日期：YYYY MM DD 决策人：待补充 影响范围：待补充 背景 待补充：为什么需要做这个决策，当前约束是什么。 决策 待补充：最终采用的方案。 原因 待补充：为什么选择这个方案，而不是其他方案。 备选方案 方案 优点 缺点 结论 待补充 待补充 待补充 待补充 影响 对代码结构的影响：待补充...",
+      "content": "# ADR-0000：决策标题\n\n- 状态：草案 / 已采纳 / 已废弃\n- 日期：YYYY-MM-DD\n- 决策人：待补充\n- 影响范围：待补充\n\n## 背景\n\n待补充：为什么需要做这个决策，当前约束是什么。\n\n## 决策\n\n待补充：最终采用的方案。\n\n## 原因\n\n待补充：为什么选择这个方案，而不是其他方案。\n\n## 备选方案\n\n| 方案 | 优点 | 缺点 | 结论 |\n|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 影响\n\n- 对代码结构的影响：待补充\n- 对模块边界的影响：待补充\n- 对接口/数据/事件契约的影响：待补充\n- 对部署/运行/测试的影响：待补充\n\n## 后续动作\n\n- 待补充\n"
+    },
+    {
+      "path": "designs/project-context-directory-guide.md",
+      "title": "Project Context 目录维护说明",
+      "type": "design",
+      "summary": "Project Context 目录维护说明 本文用于向团队解释 .project context/ 为什么要这样拆分，以及每类人员应该维护哪些目录。 总览 这套结构的目的不是增加文档负担，而是把不同生命周期、不同用途的信息分开放：长期设计、跨模块契约、短期协作、机器索引和自动生成物不要混在一个文件里。 1. modules/ 谁维护： 负责具体业务模块的人...",
+      "content": "# Project Context 目录维护说明\n\n本文用于向团队解释 `.project-context/` 为什么要这样拆分，以及每类人员应该维护哪些目录。\n\n## 总览\n\n```text\nmodules/     写“模块为什么这样工作”\ncontracts/   写“模块之间怎么承诺”\ndecisions/   写“为什么选这个方案”\nmetadata/    写“工具怎么找到它们”\ngenerated/   放“工具生成的全局图谱”\nactive-work/ 写“现在正在发生什么”\nagent-notes/ 写“临时交接信息”\nINDEX.md     写“从哪里开始读”\n```\n\n这套结构的目的不是增加文档负担，而是把不同生命周期、不同用途的信息分开放：长期设计、跨模块契约、短期协作、机器索引和自动生成物不要混在一个文件里。\n\n## 1. `modules/`\n\n**谁维护：**\n\n- 负责具体业务模块的人。\n- 例如搜索模块负责人维护 `modules/search.md`，权限模块负责人维护 `modules/permission.md`。\n\n**维护什么：**\n\n- 模块职责。\n- 模块不负责什么。\n- 关键业务流程。\n- 业务规则。\n- 依赖哪些模块。\n- 修改这个模块时要注意什么。\n\n**为什么放这里：**\n\nCodeGraph 能告诉 AI “函数怎么调用”，但不能稳定告诉 AI “这个模块为什么这样设计、边界在哪里”。`modules/` 是 AI 和新人理解业务模块的第一入口。\n\n## 2. `contracts/`\n\n**谁维护：**\n\n- 负责跨模块接口的人。\n- API 由后端或接口负责人维护。\n- 数据库契约由数据模型或后端负责人维护。\n- 事件契约由异步链路的生产者和消费者共同维护。\n\n**维护什么：**\n\n- API 语义。\n- 数据表共享字段语义。\n- 事件消息格式。\n- 哪些字段不能随便改。\n- 哪些变更会影响其他模块。\n- 契约的权威来源，例如 OpenAPI、schema、proto。\n\n**为什么放这里：**\n\n契约是跨模块协作的边界。改代码最容易出问题的地方是“我只改了自己模块，但破坏了别人依赖的语义”。`contracts/` 让 AI 在改接口、数据库、事件前知道影响面。\n\n## 3. `decisions/`\n\n**谁维护：**\n\n- 做出架构决策的人。\n- 技术负责人、模块负责人，或者当次做出长期设计选择的 agent。\n\n**维护什么：**\n\n- 为什么选这个方案。\n- 放弃了哪些方案。\n- 这个决策带来的约束。\n- 以后改动时不能忽略的背景。\n\n**为什么放这里：**\n\n代码只能说明“现在是什么”，很难说明“为什么不是别的方案”。架构决策如果不记录，后续 AI 或新人容易反复推翻已有判断。`decisions/` 用来防止重复踩坑和反复争论。\n\n## 4. `metadata/`\n\n**谁维护：**\n\n- 通常由工具或 MCP 自动维护。\n- 人可以少量手改，例如新增模块时添加模块到代码路径的映射。\n\n**维护什么：**\n\n- 模块对应哪些文档。\n- 模块对应哪些代码路径。\n- 模块依赖哪些契约。\n- 模块负责人是谁。\n- 外部系统来源有哪些。\n\n**为什么放这里：**\n\n`.md` 适合人读，但不适合工具稳定解析。MCP 需要一个机器可读入口，快速判断：这个文件属于哪个模块、这个模块要读哪些文档、改这个代码要检查哪些契约。`metadata/` 是工具索引层，不是主要给人写长文的地方。\n\n## 5. `generated/`\n\n**谁维护：**\n\n- 工具自动生成。\n- 人一般不要手写。\n\n**维护什么：**\n\n- `project-graph.json`\n- `project-tree.md`\n- `project-graph.mmd`\n- `stale-report.md`\n\n**为什么放这里：**\n\n这些文件是从 `modules/`、`contracts/`、`decisions/`、`metadata/` 合成出来的结果，用来快速看全局图谱和检查文档是否过期。因为它们是生成物，所以单独放，避免和人工维护文档混在一起。\n\n## 6. `active-work/`\n\n**谁维护：**\n\n- 当前正在做跨模块工作的 agent 或负责人。\n\n**维护什么：**\n\n- 当前正在推进的事情。\n- 当前阻塞。\n- 短期风险。\n- 下一个 agent 开工前必须知道的信息。\n\n**为什么放这里：**\n\n这是短期协作状态，不适合写进长期架构文档。例如“这周搜索排序正在重构，先不要改 ranking API”，这种信息应该放在 `active-work/`。\n\n## 7. `agent-notes/`\n\n**谁维护：**\n\n- 每个完成任务、需要交接上下文的 agent。\n\n**维护什么：**\n\n- 交接说明。\n- 临时发现。\n- 尚未沉淀成长期文档，但下一个 agent 需要知道的信息。\n\n**为什么放这里：**\n\n避免所有临时信息都污染正式文档。如果某条 agent note 反复有价值，再沉淀到 `modules/`、`contracts/` 或 `decisions/`。\n\n## 8. `INDEX.md`\n\n**谁维护：**\n\n- 项目上下文维护者。\n- 或者新增模块、契约的人顺手更新。\n\n**维护什么：**\n\n- 项目目标。\n- 阅读顺序。\n- 模块地图。\n- 契约地图。\n- 关键入口。\n\n**为什么放这里：**\n\n这是 AI 和人进入 `.project-context/` 的首页。它不应该写太多细节，只负责导航。\n\n## 9. `architecture.md`\n\n**谁维护：**\n\n- 架构负责人。\n- 或者做跨模块架构变更的人。\n\n**维护什么：**\n\n- 系统整体架构。\n- 核心链路。\n- 模块边界总览。\n- 全局技术约定。\n\n**为什么放这里：**\n\n它回答的是“整个项目怎么组成”，不是某个模块的细节。AI 在做跨模块改动前应该先读它。\n\n## 10. `glossary.md`\n\n**谁维护：**\n\n- 业务负责人、产品、后端，或任何发现术语歧义的人。\n\n**维护什么：**\n\n- 业务术语。\n- 技术术语。\n- 缩写。\n- 同名但不同义的概念。\n\n**为什么放这里：**\n\n术语不统一会导致 AI 和人都误解需求。例如“节点”“实体”“知识点”“文档块”这类词，最好统一定义。\n\n## 维护原则\n\n- 长期有效的信息放 `modules/`、`contracts/`、`decisions/`、`architecture.md`。\n- 短期协作状态放 `active-work/`。\n- 临时交接信息放 `agent-notes/`。\n- 机器可读索引放 `metadata/`。\n- 自动生成结果放 `generated/`。\n- 不要把密钥、token、cookie、个人隐私或生产敏感数据写入 `.project-context/`。\n"
+    },
+    {
+      "path": "designs/project-context-mcp-design.md",
+      "title": "Project Context MCP 旁路扩展设计说明",
+      "type": "design",
+      "summary": "Project Context MCP 旁路扩展设计说明 1. 目标定位 这套系统不替代 CodeGraph，而是在它旁边补一层“项目语义图谱”。 最终效果是： 2. 推荐目录结构 项目内放一套稳定目录： 职责划分： 3. 文档层规范 3.1 INDEX.md 作为入口，告诉 AI 和 MCP 该怎么读项目。 建议结构： 3.2 modules/ .md 模...",
+      "content": "# Project Context MCP 旁路扩展设计说明\n\n## 1. 目标定位\n\n这套系统不替代 CodeGraph，而是在它旁边补一层“项目语义图谱”。\n\n```text\nCodeGraph 负责代码事实：\n- 文件\n- 符号\n- 函数 / 类 / 方法\n- 调用关系\n- import / dependency\n- 代码位置\n\nProject Context 负责项目语义：\n- 模块职责\n- 业务流程\n- 架构决策\n- API / 数据库 / 事件契约\n- 跨模块依赖\n- 修改注意事项\n- 文档与代码映射\n\nProject Context MCP 负责连接两者：\n- 搜文档\n- 查模块\n- 生成项目图谱树\n- 根据代码变更提示文档同步\n- 检查文档是否过期\n```\n\n最终效果是：\n\n```text\n用户问业务逻辑\n  -> 先读 Project Context 文档\n  -> 再用 CodeGraph 查真实代码\n  -> 回答时同时拥有“业务语义”和“代码事实”\n\n用户改代码\n  -> 先定位模块文档和契约\n  -> 再改代码\n  -> 根据 diff 判断哪些文档需要同步\n  -> 重新生成项目图谱树\n```\n\n## 2. 推荐目录结构\n\n项目内放一套稳定目录：\n\n```text\n.project-context/\n  INDEX.md\n  architecture.md\n  glossary.md\n\n  modules/\n    README.md\n    _template.md\n    search.md\n    graph.md\n    auth.md\n\n  contracts/\n    api.md\n    database.md\n    events.md\n    permissions.md\n\n  decisions/\n    0000-template.md\n    0001-project-context-layer.md\n\n  active-work/\n    current.md\n    blockers.md\n\n  agent-notes/\n    template.md\n\n  metadata/\n    modules.json\n    contracts.json\n    ownership.json\n    external-sources.json\n\n  generated/\n    project-tree.md\n    project-graph.json\n    project-graph.mmd\n    stale-report.md\n```\n\n职责划分：\n\n```text\n.md\n  给人和 AI 读，保存语义、背景、边界、规则。\n\nmetadata/*.json\n  给 MCP 稳定解析，保存模块到代码、文档、契约、负责人之间的映射。\n\ngenerated/*\n  自动生成，不作为人工主编辑入口。\n```\n\n## 3. 文档层规范\n\n### 3.1 INDEX.md\n\n作为入口，告诉 AI 和 MCP 该怎么读项目。\n\n建议结构：\n\n```md\n# 项目共享上下文索引\n\n## 项目目标\n\n简述项目解决什么问题、服务谁、核心价值是什么。\n\n## 阅读顺序\n\n1. architecture.md\n2. glossary.md\n3. active-work/current.md\n4. active-work/blockers.md\n5. 根据 metadata/modules.json 找相关模块文档\n6. 根据 metadata/contracts.json 找相关契约文档\n\n## 模块地图\n\n| 模块 | 文档 | 代码范围 | 说明 |\n|---|---|---|---|\n| search | modules/search.md | src/search/** | 搜索与排序 |\n\n## 契约地图\n\n| 契约 | 文档 | 权威来源 |\n|---|---|---|\n| API | contracts/api.md | openapi.yaml |\n```\n\n### 3.2 modules/*.md\n\n模块文档保存“这个模块为什么存在、负责什么、不负责什么”。\n\n模板：\n\n```md\n---\nid: search\nname: 搜索模块\nstatus: active\nrelated_files:\n  - src/search/**\n  - src/indexer/**\nrelated_contracts:\n  - contracts/api.md\n  - contracts/database.md\ndepends_on:\n  - graph\n  - permission\nlast_verified: 2026-05-27\n---\n\n# 搜索模块\n\n## 职责\n\n负责接收用户查询、召回候选结果、排序并返回搜索结果。\n\n## 不负责\n\n- 不负责写入知识图谱。\n- 不负责权限规则定义，只消费权限模块的过滤结果。\n\n## 关键流程\n\n1. 接收查询请求。\n2. 做 query normalization。\n3. 调用知识图谱或索引服务召回结果。\n4. 应用权限过滤。\n5. 排序并返回。\n\n## 业务规则\n\n- 空查询不触发召回。\n- 权限过滤必须在结果返回前完成。\n- 排序逻辑变更需要同步更新 API 返回语义。\n\n## 依赖模块\n\n- graph：提供图谱查询。\n- permission：提供权限过滤规则。\n\n## 修改注意事项\n\n- 改 ranking 时，需要检查 `contracts/api.md`。\n- 改索引字段时，需要检查 `contracts/database.md`。\n```\n\n### 3.3 contracts/*.md\n\n契约文档不重复 schema 的完整内容，只解释“语义”和“协作约束”。\n\n例如：\n\n```md\n---\nid: api\nauthority:\n  - openapi.yaml\nrelated_modules:\n  - search\n  - graph\nlast_verified: 2026-05-27\n---\n\n# API 契约说明\n\n## 权威来源\n\nAPI 字段、类型、必填规则以 `openapi.yaml` 为准。\n\n## 语义补充\n\n### GET /search\n\n- 返回顺序代表当前排序结果。\n- 返回前必须完成权限过滤。\n- `score` 只表示排序相关性，不表示权限等级。\n\n## 修改规则\n\n- 修改返回字段时，必须同步检查前端调用方。\n- 修改排序语义时，必须同步更新搜索模块文档。\n```\n\n### 3.4 decisions/*.md\n\n用于记录长期有效的架构决策。\n\n```md\n---\nid: 0001-project-context-layer\nstatus: accepted\ndate: 2026-05-27\nrelated_modules:\n  - project-context\n---\n\n# 使用旁路 Project Context MCP 扩展 CodeGraph\n\n## 背景\n\nCodeGraph 能快速索引代码结构，但不能稳定表达业务语义、模块边界和架构决策。\n\n## 决策\n\n不修改 CodeGraph 核心，新增 `.project-context/` 和 Project Context MCP。\n\n## 原因\n\n- 降低对 CodeGraph 上游变更的耦合。\n- 先在业务项目中验证效果。\n- 后续可迁移为 CodeGraph 可选扩展。\n\n## 影响\n\n- AI 开工前优先读取项目语义文档。\n- 修改代码后需要检查文档是否同步。\n```\n\n## 4. 元数据结构设计\n\n### 4.1 metadata/modules.json\n\n用于 MCP 快速判断“代码文件属于哪个模块”。\n\n```json\n{\n  \"version\": 1,\n  \"modules\": [\n    {\n      \"id\": \"search\",\n      \"name\": \"搜索模块\",\n      \"doc\": \"modules/search.md\",\n      \"files\": [\n        \"src/search/**\",\n        \"src/indexer/**\"\n      ],\n      \"contracts\": [\n        \"api\",\n        \"database\"\n      ],\n      \"depends_on\": [\n        \"graph\",\n        \"permission\"\n      ],\n      \"owners\": [\n        \"search-team\"\n      ],\n      \"tags\": [\n        \"query\",\n        \"ranking\",\n        \"retrieval\"\n      ]\n    }\n  ]\n}\n```\n\n### 4.2 metadata/contracts.json\n\n用于记录契约文档和权威来源。\n\n```json\n{\n  \"version\": 1,\n  \"contracts\": [\n    {\n      \"id\": \"api\",\n      \"name\": \"API 契约\",\n      \"doc\": \"contracts/api.md\",\n      \"authority\": [\n        \"openapi.yaml\"\n      ],\n      \"related_modules\": [\n        \"search\",\n        \"graph\"\n      ]\n    },\n    {\n      \"id\": \"database\",\n      \"name\": \"数据库契约\",\n      \"doc\": \"contracts/database.md\",\n      \"authority\": [\n        \"db/schema.sql\",\n        \"prisma/schema.prisma\"\n      ],\n      \"related_modules\": [\n        \"search\",\n        \"graph\"\n      ]\n    }\n  ]\n}\n```\n\n### 4.3 metadata/ownership.json\n\n用于协作或代码审查提示。\n\n```json\n{\n  \"version\": 1,\n  \"owners\": [\n    {\n      \"id\": \"search-team\",\n      \"name\": \"搜索团队\",\n      \"modules\": [\n        \"search\"\n      ],\n      \"notes\": \"搜索排序、召回链路和相关 API 语义由该团队维护。\"\n    }\n  ]\n}\n```\n\n### 4.4 metadata/external-sources.json\n\n用于记录外部系统来源，例如 TAPD、Linear、Confluence、Grafana。\n\n```json\n{\n  \"version\": 1,\n  \"sources\": [\n    {\n      \"id\": \"tapd-bugs\",\n      \"type\": \"tapd\",\n      \"description\": \"缺陷跟踪系统\",\n      \"related_modules\": [\n        \"search\",\n        \"graph\"\n      ]\n    }\n  ]\n}\n```\n\n## 5. 生成的项目级图谱树\n\n### 5.1 generated/project-graph.json\n\n这是给 MCP / AI 稳定解析的权威生成物。\n\n```json\n{\n  \"version\": 1,\n  \"generated_at\": \"2026-05-27T00:00:00Z\",\n  \"project\": {\n    \"name\": \"团队共享知识图谱\"\n  },\n  \"modules\": [\n    {\n      \"id\": \"search\",\n      \"name\": \"搜索模块\",\n      \"doc\": \"modules/search.md\",\n      \"files\": [\n        \"src/search/**\",\n        \"src/indexer/**\"\n      ],\n      \"contracts\": [\n        \"api\",\n        \"database\"\n      ],\n      \"depends_on\": [\n        \"graph\",\n        \"permission\"\n      ],\n      \"business_rules\": [\n        \"权限过滤必须发生在结果返回前\"\n      ],\n      \"entrypoints\": [\n        {\n          \"type\": \"api\",\n          \"name\": \"GET /search\"\n        }\n      ]\n    }\n  ],\n  \"edges\": [\n    {\n      \"from\": \"search\",\n      \"to\": \"graph\",\n      \"type\": \"depends_on\"\n    },\n    {\n      \"from\": \"search\",\n      \"to\": \"api\",\n      \"type\": \"uses_contract\"\n    }\n  ]\n}\n```\n\n### 5.2 generated/project-tree.md\n\n这是给人读的树。\n\n```md\n# 项目图谱树\n\n## 搜索模块\n\n- 文档：`modules/search.md`\n- 代码：\n  - `src/search/**`\n  - `src/indexer/**`\n- 契约：\n  - `contracts/api.md`\n  - `contracts/database.md`\n- 依赖：\n  - 知识图谱模块\n  - 权限模块\n- 关键规则：\n  - 权限过滤必须发生在结果返回前。\n- 关键入口：\n  - `GET /search`\n```\n\n### 5.3 generated/project-graph.mmd\n\n用于 Mermaid 可视化。\n\n```mermaid\ngraph LR\n  search[\"搜索模块\"]\n  graph[\"知识图谱模块\"]\n  permission[\"权限模块\"]\n  api[\"API 契约\"]\n  database[\"数据库契约\"]\n\n  search -->|depends_on| graph\n  search -->|depends_on| permission\n  search -->|uses_contract| api\n  search -->|uses_contract| database\n```\n\n### 5.4 generated/stale-report.md\n\n用于检查文档过期风险。\n\n```md\n# 文档过期检查报告\n\n## 缺失文件\n\n- `modules/search.md` 引用了 `src/indexer/**`，但没有匹配文件。\n\n## 未记录模块\n\n- `src/payment/**` 存在代码文件，但没有匹配到任何模块。\n\n## 契约不一致\n\n- `contracts/api.md` 提到了 `GET /search`，但 OpenAPI 中未发现该接口。\n\n## 建议更新\n\n- 新增 `modules/payment.md`。\n- 更新 `metadata/modules.json`。\n```\n\n## 6. Project Context MCP 工具设计\n\n推荐第一版提供 6 个核心工具。\n\n### 6.1 context_search\n\n搜索项目语义文档。\n\n```text\ncontext_search(query, scope?)\n```\n\n用途：\n\n```text\n用户问：\n“搜索逻辑是怎么走的？”\n\nMCP：\n- 搜 modules/*.md\n- 搜 contracts/*.md\n- 搜 decisions/*.md\n- 返回相关模块、文档片段、契约和代码范围\n```\n\n返回：\n\n```json\n{\n  \"matches\": [\n    {\n      \"type\": \"module\",\n      \"id\": \"search\",\n      \"doc\": \"modules/search.md\",\n      \"score\": 0.91,\n      \"summary\": \"搜索模块负责 query normalization、召回、权限过滤、排序。\"\n    }\n  ]\n}\n```\n\n### 6.2 context_get_module\n\n读取某个模块的完整上下文。\n\n```text\ncontext_get_module(module_id)\n```\n\n返回：\n\n```json\n{\n  \"module\": {\n    \"id\": \"search\",\n    \"name\": \"搜索模块\",\n    \"doc\": \"modules/search.md\",\n    \"files\": [\"src/search/**\"],\n    \"contracts\": [\"api\", \"database\"],\n    \"depends_on\": [\"graph\", \"permission\"]\n  },\n  \"documents\": [\n    {\n      \"path\": \"modules/search.md\",\n      \"content\": \"...\"\n    }\n  ],\n  \"contracts\": [\n    {\n      \"id\": \"api\",\n      \"doc\": \"contracts/api.md\",\n      \"authority\": [\"openapi.yaml\"]\n    }\n  ]\n}\n```\n\n### 6.3 context_map_files\n\n根据文件路径判断影响模块。\n\n```text\ncontext_map_files(files[])\n```\n\n用途：\n\n```text\ngit diff 后传入变更文件：\n- src/search/ranking.ts\n- openapi.yaml\n\n返回：\n- 影响 search 模块\n- 影响 api 契约\n- 需要检查 modules/search.md、contracts/api.md\n```\n\n### 6.4 context_sync_docs_from_diff\n\n根据代码 diff 生成文档同步建议。\n\n```text\ncontext_sync_docs_from_diff(diff)\n```\n\n第一版不要自动覆盖文档，只生成建议：\n\n```json\n{\n  \"affected_modules\": [\"search\"],\n  \"affected_contracts\": [\"api\"],\n  \"suggestions\": [\n    {\n      \"doc\": \"modules/search.md\",\n      \"reason\": \"src/search/ranking.ts 被修改，可能影响排序规则说明。\",\n      \"action\": \"review\"\n    },\n    {\n      \"doc\": \"contracts/api.md\",\n      \"reason\": \"openapi.yaml 被修改，可能影响 API 契约说明。\",\n      \"action\": \"review\"\n    }\n  ]\n}\n```\n\n后续可以加 `apply_patch: true`，但默认不自动写入。\n\n### 6.5 context_generate_graph\n\n生成项目图谱。\n\n```text\ncontext_generate_graph()\n```\n\n执行：\n\n```text\n1. 读取 metadata/*.json\n2. 读取 modules/*.md frontmatter\n3. 读取 contracts/*.md frontmatter\n4. 可选读取 CodeGraph 文件 / 符号索引\n5. 合并模块、契约、文件、依赖关系\n6. 输出 generated/project-graph.json\n7. 输出 generated/project-tree.md\n8. 输出 generated/project-graph.mmd\n```\n\n### 6.6 context_check_staleness\n\n检查文档和项目事实是否不一致。\n\n```text\ncontext_check_staleness()\n```\n\n检查项：\n\n```text\n- metadata 引用的文档是否存在\n- 文档 frontmatter 引用的文件 glob 是否能匹配\n- contracts authority 文件是否存在\n- 代码目录是否没有模块归属\n- API 文档提到的接口是否能在 OpenAPI 中找到\n- 数据库文档提到的表是否能在 schema 中找到\n- generated/project-graph.json 是否需要重新生成\n```\n\n## 7. 与 CodeGraph 的关系\n\n第一版不要直接改 CodeGraph。\n\nProject Context MCP 可以通过以下方式和 CodeGraph 配合：\n\n```text\n方式 A：AI 编排\n  AI 先调用 Project Context MCP\n  再调用 CodeGraph MCP\n\n方式 B：Project Context MCP 读取 .codegraph 输出\n  如果 CodeGraph 本地索引格式稳定，可以只读使用\n\n方式 C：Project Context MCP 不读取 CodeGraph\n  只维护文档语义和文件映射\n  代码结构仍由 AI 调 CodeGraph 查\n```\n\n推荐第一版采用：\n\n```text\n方式 A + 方式 C\n```\n\n原因：\n\n```text\n- 最稳。\n- 不依赖 CodeGraph 内部 schema。\n- 不会被 CodeGraph 上游改动影响。\n- MCP 工具边界清晰。\n```\n\n也就是：\n\n```text\nProject Context MCP 管项目语义。\nCodeGraph MCP 管代码事实。\nAI 负责把两者结合起来。\n```\n\n## 8. 工作流设计\n\n### 8.1 提问业务逻辑\n\n```text\n用户：搜索结果排序逻辑是什么？\n\nAI：\n1. context_search(\"搜索结果排序逻辑\")\n2. context_get_module(\"search\")\n3. codegraph_context(\"search ranking\")\n4. codegraph_trace(\"SearchController\", \"rankResults\")，如需要\n5. 综合回答：\n   - 先讲业务规则\n   - 再指向代码实现\n   - 最后提醒相关契约\n```\n\n### 8.2 修改代码\n\n```text\n用户：调整搜索排序逻辑\n\nAI：\n1. context_get_module(\"search\")\n2. 阅读 modules/search.md 和 contracts/api.md\n3. codegraph_context(\"search ranking\")\n4. 修改代码\n5. 运行测试\n6. context_sync_docs_from_diff(git diff)\n7. 更新受影响文档\n8. context_generate_graph()\n9. context_check_staleness()\n```\n\n### 8.3 新增模块\n\n```text\n用户：新增推荐模块\n\nAI：\n1. 新增 modules/recommendation.md\n2. 更新 metadata/modules.json\n3. 如有 API / 数据库 / 事件，更新 contracts/*.md\n4. 新增必要 ADR\n5. context_generate_graph()\n6. context_check_staleness()\n```\n\n## 9. 同步策略\n\n不要一上来做“自动改文档”，推荐分三档。\n\n### 第一档：只提示\n\n```text\n代码改了 -> MCP 提示哪些文档可能要改\n```\n\n适合第一版。\n\n### 第二档：生成补丁\n\n```text\n代码改了 -> MCP 生成文档 patch -> AI 或用户审核\n```\n\n适合稳定后。\n\n### 第三档：自动应用低风险更新\n\n```text\n例如：\n- last_verified 日期\n- generated/project-tree.md\n- generated/project-graph.json\n- generated/project-graph.mmd\n```\n\n但不要自动改：\n\n```text\n- 模块职责\n- 业务规则\n- 架构决策\n- 跨模块边界\n```\n\n这些必须由 AI 或人审核。\n\n## 10. 校验规则\n\n建议第一版实现这些规则：\n\n```text\nPCTX001 metadata 引用的模块文档不存在\nPCTX002 模块文档 frontmatter 缺少 id/name/related_files\nPCTX003 related_files glob 没有匹配任何文件\nPCTX004 代码文件没有归属模块\nPCTX005 合同文档 authority 文件不存在\nPCTX006 模块依赖了不存在的模块\nPCTX007 generated/project-graph.json 已过期\nPCTX008 文档引用的 API 在 OpenAPI 中不存在\nPCTX009 文档引用的数据表在 schema 中不存在\nPCTX010 metadata 和 frontmatter 的模块依赖不一致\n```\n\n报告示例：\n\n```md\n# Stale Report\n\n## PCTX004 代码文件没有归属模块\n\n- `src/recommendation/index.ts`\n\n建议：\n- 新增 `modules/recommendation.md`\n- 或更新 `metadata/modules.json`\n```\n\n## 11. 落地阶段\n\n### Phase 1：文档结构和元数据\n\n先完成：\n\n```text\n.project-context/\n  INDEX.md\n  architecture.md\n  modules/_template.md\n  contracts/*.md\n  decisions/0001-project-context-layer.md\n  metadata/modules.json\n  metadata/contracts.json\n```\n\n目标：\n\n```text\nAI 可以稳定读懂项目语义。\n```\n\n### Phase 2：Project Context MCP 只读工具\n\n实现：\n\n```text\ncontext_search\ncontext_get_module\ncontext_map_files\n```\n\n目标：\n\n```text\n业务问题能先命中文档，再用 CodeGraph 精查代码。\n```\n\n### Phase 3：生成图谱树\n\n实现：\n\n```text\ncontext_generate_graph\n```\n\n输出：\n\n```text\ngenerated/project-graph.json\ngenerated/project-tree.md\ngenerated/project-graph.mmd\n```\n\n目标：\n\n```text\n项目可以生成统一图谱树。\n```\n\n### Phase 4：同步与过期检查\n\n实现：\n\n```text\ncontext_sync_docs_from_diff\ncontext_check_staleness\n```\n\n目标：\n\n```text\n改代码后能知道哪些文档需要同步。\n```\n\n### Phase 5：增强 CodeGraph 关联\n\n后续再考虑：\n\n```text\n- 从 CodeGraph 查询模块内关键 symbol\n- 在 project-graph.json 里附加 symbol entrypoints\n- 生成模块级调用摘要\n- 支持 codegraph docs sync 命令\n```\n\n但这不是第一版必须做的。\n\n## 12. 推荐最终方案\n\n第一版按这个边界做：\n\n```text\n不 fork CodeGraph。\n不读取 CodeGraph 内部数据库。\n不做全自动文档改写。\n\n只做：\n1. .project-context 规范\n2. metadata 映射\n3. Project Context MCP\n4. 图谱树生成\n5. 文档过期检查\n6. 由 AI 编排 Project Context MCP + CodeGraph MCP\n```\n\n这样最稳，后续也容易演进成：\n\n```bash\ncodegraph docs init\ncodegraph docs search\ncodegraph docs graph\ncodegraph docs check\ncodegraph docs sync\n```\n"
+    },
+    {
+      "path": "generated/project-tree.md",
+      "title": "项目图谱树",
+      "type": "doc",
+      "summary": "项目图谱树 当前尚未定义模块。后续由 Project Context MCP 根据 .project context/metadata/ 和 .project context/modules/ 生成。",
+      "content": "# 项目图谱树\n\n当前尚未定义模块。后续由 Project Context MCP 根据 `.project-context/metadata/` 和 `.project-context/modules/` 生成。\n"
+    },
+    {
+      "path": "generated/stale-report.md",
+      "title": "文档过期检查报告",
+      "type": "doc",
+      "summary": "文档过期检查报告 当前尚未运行 Project Context MCP 过期检查。",
+      "content": "# 文档过期检查报告\n\n当前尚未运行 Project Context MCP 过期检查。\n"
+    },
+    {
+      "path": "glossary.md",
+      "title": "术语表",
+      "type": "doc",
+      "summary": "术语表 记录项目中的业务术语、技术术语、缩写和容易混淆的概念。 术语 含义 备注 待补充 待补充 待补充 命名约定 待补充：领域对象命名。 待补充：接口字段命名。 待补充：数据库字段命名。",
+      "content": "# 术语表\n\n记录项目中的业务术语、技术术语、缩写和容易混淆的概念。\n\n| 术语 | 含义 | 备注 |\n|---|---|---|\n| 待补充 | 待补充 | 待补充 |\n\n## 命名约定\n\n- 待补充：领域对象命名。\n- 待补充：接口字段命名。\n- 待补充：数据库字段命名。\n"
+    },
+    {
+      "path": "modules/README.md",
+      "title": "模块上下文目录",
+      "type": "module-doc",
+      "summary": "模块上下文目录 每个业务或技术模块都应该有一个独立上下文文件。新增模块时，复制 template.md 并重命名为模块名。 命名建议 使用小写英文或稳定的模块名，例如 user.md 、 auth.md 、 graph.md 。 如果模块名必须使用中文，也要保持文件名稳定，避免频繁重命名。 模块文件必须说明 模块职责 不负责的范围 主要入口 依赖模块 对外提...",
+      "content": "# 模块上下文目录\n\n每个业务或技术模块都应该有一个独立上下文文件。新增模块时，复制 `_template.md` 并重命名为模块名。\n\n## 命名建议\n\n- 使用小写英文或稳定的模块名，例如 `user.md`、`auth.md`、`graph.md`。\n- 如果模块名必须使用中文，也要保持文件名稳定，避免频繁重命名。\n\n## 模块文件必须说明\n\n- 模块职责\n- 不负责的范围\n- 主要入口\n- 依赖模块\n- 对外提供能力\n- 关键数据\n- 已知坑点\n- 最近重要变化\n"
+    },
+    {
+      "path": "modules/_template.md",
+      "title": "模块名称",
+      "type": "module-doc",
+      "summary": "模块名称 模块职责 待补充：这个模块负责什么业务能力。 不负责的范围 待补充：明确边界，避免其他 agent 误把职责放进本模块。 主要入口 类型 名称/路径 说明 页面/API/服务/任务 待补充 待补充 依赖模块 依赖模块 依赖原因 契约位置 待补充 待补充 待补充 对外提供能力 能力 使用方 契约位置 待补充 待补充 待补充 关键数据 数据 来源 消费...",
+      "content": "# 模块名称\n\n## 模块职责\n\n待补充：这个模块负责什么业务能力。\n\n## 不负责的范围\n\n待补充：明确边界，避免其他 agent 误把职责放进本模块。\n\n## 主要入口\n\n| 类型 | 名称/路径 | 说明 |\n|---|---|---|\n| 页面/API/服务/任务 | 待补充 | 待补充 |\n\n## 依赖模块\n\n| 依赖模块 | 依赖原因 | 契约位置 |\n|---|---|---|\n| 待补充 | 待补充 | 待补充 |\n\n## 对外提供能力\n\n| 能力 | 使用方 | 契约位置 |\n|---|---|---|\n| 待补充 | 待补充 | 待补充 |\n\n## 关键数据\n\n| 数据 | 来源 | 消费方 | 注意事项 |\n|---|---|---|---|\n| 待补充 | 待补充 | 待补充 | 待补充 |\n\n## 已知坑点\n\n- 待补充：记录其他 agent 容易重复踩坑的信息。\n\n## 最近重要变化\n\n- 待补充：只记录会影响后续开发的变化，不写流水账。\n"
+    }
+  ],
+  "normalized": {
+    "nodes": [
+      {
+        "id": "project",
+        "type": "project",
+        "label": "团队共享知识图谱",
+        "summary": "Project Context 根节点",
+        "metadata": {
+          "name": "团队共享知识图谱"
+        }
+      },
+      {
+        "id": "doc:INDEX.md",
+        "type": "doc",
+        "label": "项目共享上下文索引",
+        "path": "INDEX.md",
+        "summary": "项目共享上下文索引 这是所有 agent 的项目上下文入口。开始任何开发任务前，先从这里判断需要读取哪些上下文文件。 项目目标 待补充：用 3～5 句话说明项目要解决的问题、核心用户、主要业务目标。 当前状态 待补充：当前项目阶段、主要开发方向、近期重点。 阅读顺序 通用任务： 1. architecture.md 2. glossary.md 3. act...",
+        "metadata": {
+          "path": "INDEX.md"
+        }
+      },
+      {
+        "id": "doc:README.md",
+        "type": "doc",
+        "label": "共享上下文记忆树",
+        "path": "README.md",
+        "summary": "共享上下文记忆树 本目录保存项目级共享上下文，供多人、多 agent 协作时使用。 快速入口 总索引： INDEX.md 架构上下文： architecture.md 术语表： glossary.md 模块上下文： modules/ 跨模块契约： contracts/ 架构决策： decisions/ 当前协作： active work/ agent 交接：...",
+        "metadata": {
+          "path": "README.md"
+        }
+      },
+      {
+        "id": "doc:active-work/blockers.md",
+        "type": "active-work",
+        "label": "阻塞点与风险",
+        "path": "active-work/blockers.md",
+        "summary": "阻塞点与风险 记录跨模块阻塞、协作风险、未决问题和需要人工决策的事项。 当前阻塞 阻塞点 影响范围 需要谁处理 状态 备注 待补充 待补充 待补充 待补充 待补充 风险列表 风险 影响 缓解方式 状态 待补充 待补充 待补充 待补充 未决问题 待补充：需要用户或团队确认的问题。",
+        "metadata": {
+          "path": "active-work/blockers.md"
+        }
+      },
+      {
+        "id": "doc:active-work/current.md",
+        "type": "active-work",
+        "label": "当前协作重点",
+        "path": "active-work/current.md",
+        "summary": "当前协作重点 记录当前阶段正在推进、会影响多个 agent 或多个模块的工作。不要写个人流水账。 当前重点 事项 涉及模块 负责人/agent 状态 下一步 待补充 待补充 待补充 待补充 待补充 近期变更提醒 待补充：记录近期会影响其他 agent 判断的重要变化。 交接注意事项 待补充：记录下一个 agent 开工前必须知道的上下文。",
+        "metadata": {
+          "path": "active-work/current.md"
+        }
+      },
+      {
+        "id": "doc:agent-notes/template.md",
+        "type": "agent-note",
+        "label": "Agent 交接记录模板",
+        "path": "agent-notes/template.md",
+        "summary": "Agent 交接记录模板 用于记录必要的跨 agent 交接信息。只记录后续 agent 必须知道的内容，不写流水账。 基本信息 日期：YYYY MM DD agent/人员：待补充 任务：待补充 涉及模块：待补充 本次重要结论 待补充：记录会影响后续判断的结论。 已完成 待补充：只列关键结果。 未完成 / 待继续 待补充：说明下一步应该从哪里开始。 影响到...",
+        "metadata": {
+          "path": "agent-notes/template.md"
+        }
+      },
+      {
+        "id": "doc:architecture.md",
+        "type": "doc",
+        "label": "项目架构上下文",
+        "path": "architecture.md",
+        "summary": "项目架构上下文 架构概览 待补充：描述系统整体组成、主要服务、前端/后端/数据层/外部依赖。 核心链路 链路 1：待补充 入口：待补充 主要模块：待补充 关键数据：待补充 外部依赖：待补充 风险点：待补充 模块边界 模块 职责 不负责 依赖 待补充 待补充 待补充 待补充 关键技术约定 待补充：语言、框架、构建工具、运行环境。 待补充：认证、权限、租户、配置...",
+        "metadata": {
+          "path": "architecture.md"
+        }
+      },
+      {
+        "id": "doc:contracts/api.md",
+        "type": "contract-doc",
+        "label": "API 契约",
+        "path": "contracts/api.md",
+        "summary": "API 契约 记录跨模块 HTTP、RPC、内部服务调用等接口契约。任何影响调用方的变更都必须同步更新本文件。 维护规则 新增接口时，说明调用方、提供方、请求参数、响应结构和错误语义。 修改接口时，说明兼容性影响和需要同步修改的模块。 废弃接口时，说明替代方案和迁移状态。 接口列表 接口 提供方 调用方 状态 说明 待补充 待补充 待补充 待补充 待补充 接...",
+        "metadata": {
+          "path": "contracts/api.md"
+        }
+      },
+      {
+        "id": "doc:contracts/database.md",
+        "type": "contract-doc",
+        "label": "数据库与共享数据契约",
+        "path": "contracts/database.md",
+        "summary": "数据库与共享数据契约 记录跨模块共享的数据表、字段语义、索引、状态流转和一致性约定。 维护规则 修改共享字段语义时，必须说明影响的模块。 新增状态值、枚举值或数据约束时，必须说明兼容性影响。 涉及迁移、回填、索引、性能风险时，必须记录风险和验证方式。 共享数据列表 数据/表 所属模块 消费模块 关键字段 说明 待补充 待补充 待补充 待补充 待补充 数据详情...",
+        "metadata": {
+          "path": "contracts/database.md"
+        }
+      },
+      {
+        "id": "doc:contracts/events.md",
+        "type": "contract-doc",
+        "label": "事件契约",
+        "path": "contracts/events.md",
+        "summary": "事件契约 记录 MQ、领域事件、异步通知、定时任务触发等跨模块异步契约。 维护规则 新增事件时，说明生产者、消费者、触发时机、payload 和幂等要求。 修改事件 payload 时，说明兼容性影响。 消费者增加副作用时，说明失败重试和补偿策略。 事件列表 事件 生产者 消费者 触发时机 状态 待补充 待补充 待补充 待补充 待补充 事件详情模板 事件名称...",
+        "metadata": {
+          "path": "contracts/events.md"
+        }
+      },
+      {
+        "id": "doc:decisions/0000-template.md",
+        "type": "decision",
+        "label": "ADR-0000：决策标题",
+        "path": "decisions/0000-template.md",
+        "summary": "ADR 0000：决策标题 状态：草案 / 已采纳 / 已废弃 日期：YYYY MM DD 决策人：待补充 影响范围：待补充 背景 待补充：为什么需要做这个决策，当前约束是什么。 决策 待补充：最终采用的方案。 原因 待补充：为什么选择这个方案，而不是其他方案。 备选方案 方案 优点 缺点 结论 待补充 待补充 待补充 待补充 影响 对代码结构的影响：待补充...",
+        "metadata": {
+          "path": "decisions/0000-template.md"
+        }
+      },
+      {
+        "id": "doc:designs/project-context-directory-guide.md",
+        "type": "design",
+        "label": "Project Context 目录维护说明",
+        "path": "designs/project-context-directory-guide.md",
+        "summary": "Project Context 目录维护说明 本文用于向团队解释 .project context/ 为什么要这样拆分，以及每类人员应该维护哪些目录。 总览 这套结构的目的不是增加文档负担，而是把不同生命周期、不同用途的信息分开放：长期设计、跨模块契约、短期协作、机器索引和自动生成物不要混在一个文件里。 1. modules/ 谁维护： 负责具体业务模块的人...",
+        "metadata": {
+          "path": "designs/project-context-directory-guide.md"
+        }
+      },
+      {
+        "id": "doc:designs/project-context-mcp-design.md",
+        "type": "design",
+        "label": "Project Context MCP 旁路扩展设计说明",
+        "path": "designs/project-context-mcp-design.md",
+        "summary": "Project Context MCP 旁路扩展设计说明 1. 目标定位 这套系统不替代 CodeGraph，而是在它旁边补一层“项目语义图谱”。 最终效果是： 2. 推荐目录结构 项目内放一套稳定目录： 职责划分： 3. 文档层规范 3.1 INDEX.md 作为入口，告诉 AI 和 MCP 该怎么读项目。 建议结构： 3.2 modules/ .md 模...",
+        "metadata": {
+          "path": "designs/project-context-mcp-design.md"
+        }
+      },
+      {
+        "id": "doc:generated/project-tree.md",
+        "type": "doc",
+        "label": "项目图谱树",
+        "path": "generated/project-tree.md",
+        "summary": "项目图谱树 当前尚未定义模块。后续由 Project Context MCP 根据 .project context/metadata/ 和 .project context/modules/ 生成。",
+        "metadata": {
+          "path": "generated/project-tree.md"
+        }
+      },
+      {
+        "id": "doc:generated/stale-report.md",
+        "type": "doc",
+        "label": "文档过期检查报告",
+        "path": "generated/stale-report.md",
+        "summary": "文档过期检查报告 当前尚未运行 Project Context MCP 过期检查。",
+        "metadata": {
+          "path": "generated/stale-report.md"
+        }
+      },
+      {
+        "id": "doc:glossary.md",
+        "type": "doc",
+        "label": "术语表",
+        "path": "glossary.md",
+        "summary": "术语表 记录项目中的业务术语、技术术语、缩写和容易混淆的概念。 术语 含义 备注 待补充 待补充 待补充 命名约定 待补充：领域对象命名。 待补充：接口字段命名。 待补充：数据库字段命名。",
+        "metadata": {
+          "path": "glossary.md"
+        }
+      },
+      {
+        "id": "doc:modules/README.md",
+        "type": "module-doc",
+        "label": "模块上下文目录",
+        "path": "modules/README.md",
+        "summary": "模块上下文目录 每个业务或技术模块都应该有一个独立上下文文件。新增模块时，复制 template.md 并重命名为模块名。 命名建议 使用小写英文或稳定的模块名，例如 user.md 、 auth.md 、 graph.md 。 如果模块名必须使用中文，也要保持文件名稳定，避免频繁重命名。 模块文件必须说明 模块职责 不负责的范围 主要入口 依赖模块 对外提...",
+        "metadata": {
+          "path": "modules/README.md"
+        }
+      },
+      {
+        "id": "doc:modules/_template.md",
+        "type": "module-doc",
+        "label": "模块名称",
+        "path": "modules/_template.md",
+        "summary": "模块名称 模块职责 待补充：这个模块负责什么业务能力。 不负责的范围 待补充：明确边界，避免其他 agent 误把职责放进本模块。 主要入口 类型 名称/路径 说明 页面/API/服务/任务 待补充 待补充 依赖模块 依赖模块 依赖原因 契约位置 待补充 待补充 待补充 对外提供能力 能力 使用方 契约位置 待补充 待补充 待补充 关键数据 数据 来源 消费...",
+        "metadata": {
+          "path": "modules/_template.md"
+        }
+      },
+      {
+        "id": "contract:api",
+        "type": "contract",
+        "label": "API 契约",
+        "path": "contracts/api.md",
+        "metadata": {
+          "id": "api",
+          "name": "API 契约",
+          "doc": "contracts/api.md",
+          "authority": [],
+          "related_modules": []
+        }
+      },
+      {
+        "id": "contract:database",
+        "type": "contract",
+        "label": "数据库契约",
+        "path": "contracts/database.md",
+        "metadata": {
+          "id": "database",
+          "name": "数据库契约",
+          "doc": "contracts/database.md",
+          "authority": [],
+          "related_modules": []
+        }
+      },
+      {
+        "id": "contract:events",
+        "type": "contract",
+        "label": "事件契约",
+        "path": "contracts/events.md",
+        "metadata": {
+          "id": "events",
+          "name": "事件契约",
+          "doc": "contracts/events.md",
+          "authority": [],
+          "related_modules": []
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "project",
+        "to": "doc:INDEX.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:README.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:active-work/blockers.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:active-work/current.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:agent-notes/template.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:architecture.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:contracts/api.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:contracts/database.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:contracts/events.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:decisions/0000-template.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:designs/project-context-directory-guide.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:designs/project-context-mcp-design.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:generated/project-tree.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:generated/stale-report.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:glossary.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:modules/README.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "doc:modules/_template.md",
+        "type": "contains"
+      },
+      {
+        "from": "project",
+        "to": "contract:api",
+        "type": "contract"
+      },
+      {
+        "from": "contract:api",
+        "to": "doc:contracts/api.md",
+        "type": "documented_by"
+      },
+      {
+        "from": "project",
+        "to": "contract:database",
+        "type": "contract"
+      },
+      {
+        "from": "contract:database",
+        "to": "doc:contracts/database.md",
+        "type": "documented_by"
+      },
+      {
+        "from": "project",
+        "to": "contract:events",
+        "type": "contract"
+      },
+      {
+        "from": "contract:events",
+        "to": "doc:contracts/events.md",
+        "type": "documented_by"
+      }
+    ]
+  }
+}

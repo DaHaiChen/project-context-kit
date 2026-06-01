@@ -47,6 +47,7 @@
 | 事件 | `contracts/events.md` | MQ、领域事件、异步通知约定 |
 | 数据库 | `contracts/database.md` | 表结构、共享字段、数据语义 |
 
+
 ## 当前协作入口
 
 - 当前重点：`active-work/current.md`
