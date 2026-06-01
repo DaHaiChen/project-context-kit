@@ -120,8 +120,8 @@ function buildTargets(cwd, only) {
     { group: "docs", from: "CLAUDE.md", to: "CLAUDE.md" },
     { group: "docs", from: "AGENTS.md", to: "AGENTS.md" },
     { group: "docs", from: "docs", to: "docs" },
-    { group: "docs", from: "PROJECT_CONTEXT_WORKFLOW.md", to: "PROJECT_CONTEXT_WORKFLOW.md" },
-    { group: "docs", from: "PROJECT_CONTEXT_WORKFLOW.drawio", to: "PROJECT_CONTEXT_WORKFLOW.drawio" }
+    { group: "docs", from: "项目文档与上下文架构说明.md", to: "项目文档与上下文架构说明.md" },
+    { group: "docs", from: "流程图.drawio", to: "流程图.drawio" }
   ];
 
   return allTargets

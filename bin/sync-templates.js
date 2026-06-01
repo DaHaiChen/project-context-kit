@@ -22,6 +22,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const packageRoot = path.resolve(__dirname, "..");
 const templateRoot = path.join(packageRoot, "templates");
+const ARCHITECTURE_DOC_NAME = "项目文档与上下文架构说明.md";
+const ARCHITECTURE_DIAGRAM_NAME = "流程图.drawio";
 
 const args = process.argv.slice(2);
 
@@ -100,8 +102,41 @@ function syncTemplates(referenceRoot) {
     copyRecursive(from, to, referenceRoot);
   }
 
+  syncArchitectureDocs(referenceRoot);
   sanitizeProjectContextTemplate();
   makeHookExecutable();
+}
+
+function syncArchitectureDocs(referenceRoot) {
+  const architectureSources = [
+    path.join(referenceRoot, ARCHITECTURE_DOC_NAME),
+    path.join(referenceRoot, "协作上下文中枢架构说明.md"),
+    path.join(referenceRoot, "docs", ARCHITECTURE_DOC_NAME)
+  ];
+
+  const architectureSource = architectureSources.find((candidate) => existsSync(candidate));
+  if (architectureSource) {
+    const target = path.join(templateRoot, ARCHITECTURE_DOC_NAME);
+    mkdirSync(path.dirname(target), { recursive: true });
+    copyFileSync(architectureSource, target);
+    console.log(`[copy] ${path.relative(referenceRoot, architectureSource)} -> ${ARCHITECTURE_DOC_NAME}`);
+  } else {
+    console.log(`[skip] missing architecture doc in reference`);
+  }
+
+  const diagramSources = [
+    path.join(referenceRoot, ARCHITECTURE_DIAGRAM_NAME),
+    path.join(referenceRoot, "PROJECT_CONTEXT_WORKFLOW.drawio")
+  ];
+
+  const diagramSource = diagramSources.find((candidate) => existsSync(candidate));
+  if (diagramSource) {
+    const target = path.join(templateRoot, ARCHITECTURE_DIAGRAM_NAME);
+    copyFileSync(diagramSource, target);
+    console.log(`[copy] ${path.relative(referenceRoot, diagramSource)} -> ${ARCHITECTURE_DIAGRAM_NAME}`);
+  } else {
+    console.log(`[skip] missing ${ARCHITECTURE_DIAGRAM_NAME} in reference`);
+  }
 }
 
 function removeObsoleteTemplatePaths() {
@@ -109,7 +144,10 @@ function removeObsoleteTemplatePaths() {
     "claude-settings.json",
     "mcp.json",
     "hooks",
-    "project-context"
+    "project-context",
+    "PROJECT_CONTEXT_WORKFLOW.md",
+    "PROJECT_CONTEXT_WORKFLOW.drawio",
+    "协作上下文中枢架构说明.md"
   ];
 
   for (const relativePath of obsoletePaths) {
@@ -124,8 +162,10 @@ function shouldSkip(relativePath) {
   const normalized = relativePath.split(path.sep).join("/");
 
   if (normalized === ".claude/settings.local.json") return true;
-  if (normalized === "协作上下文中枢架构说明.md") return true;
   if (normalized.endsWith(".DS_Store")) return true;
+  if (normalized === "协作上下文中枢架构说明.md") return true;
+  if (normalized === "PROJECT_CONTEXT_WORKFLOW.md") return true;
+  if (normalized === "PROJECT_CONTEXT_WORKFLOW.drawio") return true;
   if (normalized.startsWith("project-context-mcp/node_modules/")) return true;
   if (normalized.startsWith("project-context-mcp/dist/")) return true;
   if (normalized === "project-context-mcp/pnpm-lock.yaml") return true;

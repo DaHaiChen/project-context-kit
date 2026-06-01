@@ -73,8 +73,8 @@ project-context-mcp/                      # 本地 Project Context MCP server
 CLAUDE.md                                 # Claude Code 协作规则
 AGENTS.md                                 # 通用 agent 协作规则
 docs/                                     # 完整交付文档层
-PROJECT_CONTEXT_WORKFLOW.md               # 工作流说明
-PROJECT_CONTEXT_WORKFLOW.drawio           # 工作流图
+项目文档与上下文架构说明.md               # 架构与工作流说明
+流程图.drawio                             # 架构流程图
 ```
 
 其中 `.project-context/` 的默认结构包括：
@@ -159,8 +159,8 @@ templates/
   CLAUDE.md
   AGENTS.md
   docs/
-  PROJECT_CONTEXT_WORKFLOW.md
-  PROJECT_CONTEXT_WORKFLOW.drawio
+  项目文档与上下文架构说明.md
+  流程图.drawio
 ```
 
 ### 从基础架构同步模板
